@@ -46,8 +46,6 @@ namespace practice_70
         /// <param name="worker"></param>
         public void AddWorker(Worker worker)
         {
-            InitializeData();
-
             using (StreamWriter sw = new StreamWriter(this.path, true, Encoding.Unicode))
             {
                 Add(worker);
@@ -65,16 +63,7 @@ namespace practice_70
         {
             string data = String.Empty;
 
-            using (StreamReader sr = new StreamReader(this.path))
-            {
-                while (!sr.EndOfStream)
-                {
-                    string[] args = sr.ReadLine().Split('#');
-                    Add(new Worker(Convert.ToInt32(args[0]), Convert.ToDateTime(args[1]), args[2], Convert.ToInt32(args[3]), Convert.ToInt32(args[4]), Convert.ToDateTime(args[5]), args[6]));
-                }
-            }
-
-            File.WriteAllText(path, string.Empty, Encoding.Unicode);
+            File.WriteAllText(this.path, string.Empty, Encoding.Unicode);
 
             using (StreamWriter sw = new StreamWriter(this.path, true, Encoding.Unicode))
             {
@@ -99,7 +88,6 @@ namespace practice_70
         /// </summary>
         public Worker[] GetAllWorkers()
         {
-            InitializeData();
             return workers;
         }
         /// <summary>
@@ -109,7 +97,6 @@ namespace practice_70
         /// <returns></returns>
         public Worker GetWorkerById(int id)
         {
-            InitializeData();
             Worker worker = workers[id];
             return worker;
         }
@@ -121,8 +108,6 @@ namespace practice_70
         /// <returns></returns>
         public Worker[] GetWorkersBetweenDate(DateTime fromDate, DateTime toDate)
         {
-            InitializeData();
-
             Worker[] data = new Worker[this.id];
             for (int i = 0; i < workers.Length; i++)
             {
@@ -197,6 +182,84 @@ namespace practice_70
                     Console.WriteLine($"Дата рождения: {worker[i].BirthDay}");
                     Console.WriteLine($"Место рождения: {worker[i].BirthPlace}");
                 }
+            }
+        }
+        public void InputData()
+        {
+            Console.Write("ФИО: ");
+            string fio = $"{Console.ReadLine()}";
+
+            Console.Write("Возраст: ");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Рост: ");
+            int height = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Дата рождения: ");
+            DateTime birthDay = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Место рождения: ");
+            string birthPlace = $"{Console.ReadLine()}";
+
+            AddWorker(new Worker(id, DateTime.Now, fio, age, height, birthDay, birthPlace));
+        }
+        public int InputId()
+        {
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        public DateTime InputDateTime()
+        {
+            return Convert.ToDateTime(Console.ReadLine());
+        }
+        public void CallMenu()
+        {
+            InitializeData();
+
+            Console.Write("1 - вывести данные из файла на экран;\n" +
+              "2 - вывести данные по ID;\n" +
+              "3 - заполнить данные и добавить новую запись в конец файла.\n" +
+              "4 - удалить запись по id\n" +
+              "5 - вывести записи за указанный период\n" +
+              "Ввод: ");
+            string key = Console.ReadLine();
+
+            switch (Convert.ToInt32(key))
+            {
+                case 1:
+                    {
+                        PrintToConsole(path);
+                    }
+                    break;
+                case 2:
+                    {
+                        Console.Write("Введите id: ");
+                        int id = InputId();
+                        PrintToConsole(path, id);
+                    }
+                    break;
+                case 3:
+                    {
+                        InputData();
+                    }
+                    break;
+                case 4:
+                    {
+                        Console.Write("Введите id: ");
+                        int id = InputId();
+                        DeleteWorker(id);
+                    }
+                    break;
+                case 5:
+                    {
+                        Console.Write("Начальный период (dd.MM.YYYY HH:mm:ss): ");
+                        DateTime fromDate = InputDateTime();
+
+                        Console.Write("Конечный период  (dd.MM.YYYY HH:mm:ss): ");
+                        DateTime toDate = InputDateTime();
+
+                        PrintToConsole(path, fromDate, toDate);
+                    }
+                    break;
             }
         }
     }
