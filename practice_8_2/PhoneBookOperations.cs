@@ -66,13 +66,10 @@ namespace practice_8_2
             Console.Write("Введите телефон: ");
             inputPhone = Console.ReadLine();
 
-            foreach (var key in phoneBook.Keys)
-            {
-                if (key == inputPhone)
-                {
-                    Console.WriteLine("Владелец данного номера: {0}", name = phoneBook[key]);
-                }
-            }
+            if (phoneBook.TryGetValue(inputPhone, out name))
+                Console.WriteLine("Владелец данного номера: {0}", name);
+            else
+                Console.WriteLine("Ничего не найдено");
         }
     }
 }
