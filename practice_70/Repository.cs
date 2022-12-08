@@ -213,6 +213,8 @@ namespace practice_70
         }
         public void CallMenu()
         {
+            int id;
+
             InitializeData();
 
             Console.Write("1 - вывести данные из файла на экран;\n" +
@@ -233,7 +235,7 @@ namespace practice_70
                 case 2:
                     {
                         Console.Write("Введите id: ");
-                        int id = InputId();
+                        id = InputId();
                         PrintToConsole(path, id);
                     }
                     break;
@@ -245,7 +247,7 @@ namespace practice_70
                 case 4:
                     {
                         Console.Write("Введите id: ");
-                        int id = InputId();
+                        id = InputId();
                         DeleteWorker(id);
                     }
                     break;
