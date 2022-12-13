@@ -27,7 +27,7 @@ namespace practice_8_3
         }
         private void CheckNum(int num)
         {
-            if (hashSet.TryGetValue(num, out int val)) 
+            if (!hashSet.Add(num)) 
             {
                 Console.WriteLine("Число уже есть в коллекции");
             }
