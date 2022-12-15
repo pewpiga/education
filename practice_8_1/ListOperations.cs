@@ -30,6 +30,7 @@ namespace practice_8_1
                 if (rndNums[n] > 25 && rndNums[n] < 50)
                 {
                     rndNums.RemoveAt(n);
+                    n -= 1;
                 }
             }
         }

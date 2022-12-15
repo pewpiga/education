@@ -13,9 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice_8", "Practice_8", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "practice_8_2", "practice_8_2\practice_8_2.csproj", "{B921FCAF-37D4-4A4C-A920-0E16B798CFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice_8_3", "practice_8_3\practice_8_3.csproj", "{F01536D3-C39C-4855-8210-64D3537D8234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "practice_8_3", "practice_8_3\practice_8_3.csproj", "{F01536D3-C39C-4855-8210-64D3537D8234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practice_8_4", "practice_8_4\practice_8_4.csproj", "{17706AD4-AFEA-41DB-905B-F336DF066FCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "practice_8_4", "practice_8_4\practice_8_4.csproj", "{17706AD4-AFEA-41DB-905B-F336DF066FCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice_9", "Practice_9", "{EF5462FE-0DAD-4825-9C66-139EDA93E4DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
