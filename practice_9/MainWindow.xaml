@@ -12,10 +12,11 @@
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="SplitTxt" Content="Разделить на слова" HorizontalAlignment="Left" Margin="102,54,0,0" VerticalAlignment="Top" Height="25" Width="202" Click="SplitTxt_Click"/>
-        <Button x:Name="ReverseButton" Content="Перестановка слов" HorizontalAlignment="Left" Margin="102,84,0,0" VerticalAlignment="Top" Height="25" Width="202" Click="ReverseButton_Click"/>
-        <TextBox x:Name="InputText" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="39"/>
+        <Button x:Name="ReverseButton" Content="Перестановка слов" HorizontalAlignment="Left" Margin="102,192,0,0" VerticalAlignment="Top" Height="25" Width="202" Click="ReverseButton_Click"/>
+        <TextBox x:Name="InputTextSplit" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="39"/>
         <ListBox x:Name="SplitMsg" Margin="400,10,10,217" Grid.ColumnSpan="2"/>
         <Label x:Name="ReverseMsg" Content="Label" HorizontalAlignment="Left" Margin="400,222,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="202" Width="390"/>
+        <TextBox x:Name="InputTextReverse" HorizontalAlignment="Left" Margin="10,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="39"/>
 
     </Grid>
 </Window>

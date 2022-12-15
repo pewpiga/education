@@ -30,7 +30,7 @@ namespace practice_9
 
         private void SplitTxt_Click(object sender, RoutedEventArgs e)
         {
-            string text = InputText.Text;
+            string text = InputTextSplit.Text;
             string[] splitText = op.SplitText(text);
 
             foreach (var item in splitText)
@@ -41,7 +41,7 @@ namespace practice_9
 
         private void ReverseButton_Click(object sender, RoutedEventArgs e)
         {
-            string text = InputText.Text;
+            string text = InputTextReverse.Text;
 
             ReverseMsg.Content = op.Reverse(text);
         }
